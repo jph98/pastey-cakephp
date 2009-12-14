@@ -1,0 +1,87 @@
+<?php include "header.php" ?>
+
+<p>
+Welcome to PBin.  PBin is a paste bin that allows you to upload source code and share it with other people.
+<br><br>
+To use PBin:</p>
+<ol>
+<li>Enter a title, choose the source code type (syntax) and enter your name.</li>
+<li>Click on Add, this will create your PBin.</li>
+<li>To share the PBin with other people send them the link in the address bar.</li></ol>
+
+<p>You can also choose to make your PBin private when creating it.
+</p>
+
+<?php
+/*
+$num_pbins = count($listings);
+echo "Number of pbins: " . $num_pbins;
+
+foreach($listings as $currentlisting)
+{
+
+	echo "<div class='listing'>";
+		
+	// Link tag(Title, URL, ConfirmMessage, HTMLEscapeTitle, Return)
+	echo $html->link($currentlisting['Listing']['author'] . " - " . $currentlisting['Listing']['title'], 
+			 '/listings/viewlistingdetail/' . $currentlisting['Listing']['id'], 
+			  null, 
+			  null);
+	 
+	echo "</div>";
+}
+*/
+?>
+
+
+
+
+<form method="post" enctype="multipart/form-data" action="<?php echo $html->url('/listings/add') ?>">
+
+        <table cellpadding="0" cellspacing="0">
+        <tr><td class="label">Title <span class="mandatory">*</span></td>
+        <td class="fieldcontainer">
+                <?php echo $html->input('Listing/title', array('size' => '39','class' => 'textfield'));?>
+                <div class="errormessage">
+                        <?php echo $html->tagErrorMsg('Listing/title', 'Please enter a title for your pbin');?>
+                </div>
+        </td></tr>
+        <tr><td class="label">Language <span class="mandatory">*</span></td>
+        <td class="fieldcontainer" style="white-space:nowrap; padding-bottom:10px;">
+
+                <?php echo $html->selectTag('Listing/language', $languageslist, $this->data['Listing']['language'], array(), array('size' => '39'), false, false);?>
+
+                <div class="errormessage">
+                        <?php echo $html->tagErrorMsg('Listing/language', 'Please select the source code language', array('class' => 'error')); ?>
+                </div></td>
+        </tr>
+
+        <tr>
+        <td class="label">Your Name <span class="mandatory">*</span></td>
+        <td class="fieldcontainer">
+                <?php echo $html->input('Listing/name', array('size' => '39','class' => 'textfield'));?>
+                <div class="errormessage">
+                        <?php
+                        echo $html->tagErrorMsg('Listing/name', 'Please enter your name');
+                        ?></div>
+                </td>
+        </tr>
+
+        <td class="label">Source Code <span class="mandatory">*</span></td>
+        <td class="fieldcontainer">
+                <?php echo $html->textarea('Listing/sourcecode', array('cols' => '70', 'rows' => '10'));?>
+                <div class="errormessage">
+                        <?php echo $html->tagErrorMsg('Listing/sourcecode', 'Enter the source code');?>
+                </div>
+        </td>
+        </tr>
+
+</table>
+
+<p><?php echo $html->submit('Add', null, array('class' => 'submitButtons'));?></p>
+</form>
+</div>
+
+
+
+<?php include "footer.php" ?>

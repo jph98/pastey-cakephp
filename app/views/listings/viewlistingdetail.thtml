@@ -1,0 +1,19 @@
+<?php include "header.php" ?>
+ 
+<table cellpadding="0" cellspacacing="0">
+<?php
+
+echo "<tr><td class='labellist'>Title</td><td class='label'>" . $listingdetail['Listing']['title'] . "</td></tr>";
+echo "<tr><td class='labellist'>Language</td><td class='label'>" .  $listingdetail['Listing']['language'] . "</td></tr>";
+echo "<tr><td class='labellist' style='padding-bottom:20px;'>Author</td><td class='label' style='padding-bottom:20px;'>" .  $listingdetail['Listing']['name'] . "</td></tr>";
+
+?>
+
+<tr><td colspan="2">
+<textarea id="myCpWindow" class="codepress <?php echo $listingdetail['Listing']['language'] ?> linenumbers-on" style="padding-top: 10px;width:700px;height:300px;" wrap="off" onkeypress="checkTab(event);">
+<?php echo $listingdetail['Listing']['sourcecode']; ?>
+</textarea> 
+</td></tr>
+</table>
+
+<?php include "footer.php" ?>

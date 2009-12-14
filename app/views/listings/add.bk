@@ -1,0 +1,70 @@
+<?php include "header.php" ?>
+ 
+<div id="maincontainer">
+<form method="post" enctype="multipart/form-data" action="<?php echo $html->url('/listings/add') ?>">
+
+	<h1>Add PBin</h1>
+
+	<div class="fieldwrap">
+	
+	<div class="label">
+	* Title
+	</div>
+	<div class="fieldcontainer">
+	 	<?php echo $html->input('Listing/title', array('size' => '39','class' => 'textfield'));?>
+	 	<div class="errormessage">
+			<?php echo $html->tagErrorMsg('Listing/title', 'Please enter a title for your pbin');?>
+		</div>
+	</div>
+	</div>
+	
+	<div class="fieldwrap">
+	<div class="label">
+	* Language
+	</div>
+	<div class="fieldcontainer" style="white-space:nowrap; padding-bottom:10px;">
+			
+		<?php echo $html->selectTag('Listing/language', $languageslist, $this->data['Listing']['language'], array(), array('size' => '39'), false, false);?>
+
+		<div class="errormessage">
+			<?php echo $html->tagErrorMsg('Listing/language', 'Please select the source code language', array('class' => 'error')); ?>
+		</div>
+	</div></div>
+	
+	<div class="fieldwrap">
+	<div class="label">
+	Your Name
+	</div>
+	<div class="fieldcontainer">
+	 	<?php echo $html->input('Listing/author', array('size' => '39','class' => 'textfield'));?>
+	 	<div class="errormessage">
+			<?php 
+			echo $html->tagErrorMsg('Listing/author', 'Please enter your name');
+			?>
+		</div>
+	</div></div>
+ 
+
+ 	<div class="fieldwrap">
+        <div class="label">
+        * Source Code
+        </div>
+        <div class="fieldcontainer">
+                <?php echo $html->textarea('Listing/sourcecode', array('cols' => '110', 'rows' => '18'));?>
+                <div class="errormessage">
+                        <?php echo $html->tagErrorMsg('Listing/sourcecode', 'Enter the source code');?>
+                </div>
+        </div>
+        </div>
+	
+</div>
+
+
+<div style="text-align:left;  width: 99%; padding-bottom:10px; padding-top:10px; clear:both;">			
+	 	<?php echo $html->submit('Add', null, array('class' => 'submitButtons'));?>
+</form>
+</div>
+
+</div>
+
+<?php include "footer.php" ?>

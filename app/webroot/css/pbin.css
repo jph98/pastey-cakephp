@@ -1,0 +1,104 @@
+body {
+    	text-align: center;
+	min-width: 600px;
+	background: url(/app/webroot/images/pbin_nav_bg.jpg) top left repeat-x;
+	background-color:#fff;
+}
+
+p, li, .label {
+
+	font-family: Tahoma, "Trebuchet MS", helvetica, arial, sans serif;
+	font-size:12px;
+	color:#000;
+	
+}
+
+.labellist {
+
+		font-family: Tahoma, "Trebuchet MS", helvetica, arial, sans serif;
+		font-size:12px;
+	color:#f56a0f;
+	padding-bottom:5px;
+	font-weight:bold;
+	width:15%;
+}
+
+li, .mandatory {
+
+	color:#e84816;
+	padding-bottom:5px;
+}
+
+
+a {
+
+	color:#f56a0f;
+	text-decoration:underline;
+	
+	
+}
+
+
+a:hover {
+
+	text-decoration:none;
+	color:#e84816;
+}	
+
+  a:focus, a:active {
+   outline: none;
+
+      }
+      
+
+#wrapper {
+
+	margin:0 auto;
+	width:990px;
+	padding:10px;
+	text-align:left;
+	min-height:550px;
+}
+
+
+#header {
+
+	height:83px;
+	width: 100%;
+	
+}
+
+#header img {
+
+
+	float:left;
+	
+	}
+
+.fieldcontainer {
+	
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+
+#footer {
+
+text-align: center;
+min-width: 600px;
+border-top:2px solid #e84816;
+margin-bottom:-10px;
+width:100%
+	
+}
+
+.footerwrap {
+
+	margin:0 auto;
+	width:990px;
+	padding:10px;
+	text-align:left;
+	font-family: Tahoma, "Trebuchet MS", helvetica, arial, sans serif;
+	font-size:12px;
+	color:#000;
+}
